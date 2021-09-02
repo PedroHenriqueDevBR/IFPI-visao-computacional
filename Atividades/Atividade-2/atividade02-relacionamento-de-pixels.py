@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('/home/pedro/Dev/PythonProjects/VisaoComputacional/assets/perfil-2.jpg', 0)
+img = cv2.imread('/home/pedro/Dev/PythonProjects/VisaoComputacional/assets/perfil.jpeg', 0)
 img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)[1]
 ret, labels = cv2.connectedComponents(img)
 
@@ -13,5 +13,5 @@ labeled_img = cv2.cvtColor(labeled_img, cv2.COLOR_HSV2BGR)
 
 labeled_img[label_hue==0] = 0
 
-cv2.imshow('/home/pedro/Dev/PythonProjects/VisaoComputacional/assets/perfil-result.jpg', labeled_img)
+cv2.imshow('perfil-result.jpeg', labeled_img)
 cv2.waitKey()
